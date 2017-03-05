@@ -94,11 +94,7 @@ function create_signature($data, $private_key) {
 function verify_signature($data, $signature, $public_key) {
   $raw_signature = base64_decode($signature);
   $result = openssl_verify($data, $raw_signature, $public_key);
-  echo $result;
   // returns 1 if data and signature match
-
-  $modified_data = $data . "extra content";
-  $result = openssl_verify($modified_data, $signature, $public_key);
   // Vigenère
   return $result;
 }
