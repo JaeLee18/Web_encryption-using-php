@@ -12,6 +12,7 @@ The following **required** functionality is completed:
 2\. Encrypted Message 1
   * [ ]  Required: Decrypt the government message
   * [ ]  Required: Encrypt a response and include in this README
+        I heard about your current situation. Do you know who hacked APEX? -- The Chairman
 
 3\. Generate Public-Private Keys
   * [ ]  Required: Repair the key generator code
@@ -22,11 +23,30 @@ The following **required** functionality is completed:
 
 5\. Create/Verify Signature
   * [ ]  Required: Repair the create and verify signature code
-  
+
 6\. Encrypted Message 2
   * [ ]  Required: Decrypt the message
   * [ ]  Required: Verify the message
   * [ ]  Required: Include a response message in this README
+        Cannot access APEX from this location. Send new agent codename and public key so I can contact. Encrypt response to protect codename. Include signature to verify identity and message integrity. -- sydneybristow
+
+        WSRBDdfR4mykRkBC9zCMyuED+z34Th8QjFa7uGUDAlxhxZ/tWJgJriKlCZQdkm+DrebLXU2HXstPWHmDvcLTwJs4nTLOsEn1okJDNwAQn3pUpkwZ2iek31pTul67x5T+uPfTwDIe2XDDRd3JMc3hCcLNttG4IEAfx3QgcU+h0pOO9aRFx+zUTe8zqcu87MjlT23MRAK5KZ1jePM8By+KWgtGGquu8wfJjkuc1Wp5Ud8aEXLSvoM5Eu0HkWUIjK1lyDiQsl7u6e12TJXPfD3uzGmmv4QfIZxZJyhxZg5edwMk5NQDr1plqBuvC3+DiD7PjRLaSazHLtXyc5ro7eFNHg==
+
+        The public key is
+      -----BEGIN PUBLIC KEY-----
+      MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAw9RcwMxz+cBktcF48eBZ
+      h+AaiojQU8QSLBg8dAjsEjs5jBLHYOOKrxnjpBc/pFtNFKgLK7AJwzssZxSdfbKs
+      3t6OgUs7v9bx4RknNIDMi3oYo2rm09XMAbbMPkOsTQqSrRRfgJEBzJvRSzKDv2nc
+      M3bx/b6CelnsPi27iI+c2rXEir4abBeOCkTqMPXMrE+SVWYC8qzfuKfwBwMK/oMT
+      ieTI0LTNjSMDKfDC/WIH4glXPnswr6zvXV9rLz4Up0E0w7q7usBNGX+3r0pqyLBd
+      04/gdOcFEJ+AOWRYivNaJOwPKe44OwsnZ9oCJFV0Lq6M82aQDM/EYlWRk46PaF1I
+      jQIDAQAB
+      -----END PUBLIC KEY-----
+
+        Signature
+        WSRBDdfR4mykRkBC9zCMyuED+z34Th8QjFa7uGUDAlxhxZ/tWJgJriKlCZQdkm+DrebLXU2HXstPWHmDvcLTwJs4nTLOsEn1okJDNwAQn3pUpkwZ2iek31pTul67x5T+uPfTwDIe2XDDRd3JMc3hCcLNttG4IEAfx3QgcU+h0pOO9aRFx+zUTe8zqcu87MjlT23MRAK5KZ1jePM8By+KWgtGGquu8wfJjkuc1Wp5Ud8aEXLSvoM5Eu0HkWUIjK1lyDiQsl7u6e12TJXPfD3uzGmmv4QfIZxZJyhxZg5edwMk5NQDr1plqBuvC3+DiD7PjRLaSazHLtXyc5ro7eFNHg==
+
+
 
 7\. Agent Messages
   * [ ]  Required: Repair the dropbox code
