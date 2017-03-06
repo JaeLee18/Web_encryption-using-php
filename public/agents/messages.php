@@ -9,7 +9,6 @@
   $id = $_GET['id'];
   $agent_result = find_agent_by_id($id);
   $agent = db_fetch_assoc($agent_result);
-
   $message_result = find_messages_for($agent['id']);
 ?>
 
@@ -23,16 +22,16 @@
     <link rel="stylesheet" media="all" href="<?php echo DOC_ROOT . '/includes/styles.css'; ?>" />
   </head>
   <body>
-    
+
     <a href="<?php echo url_for('/agents/index.php') ?>">Back to List</a>
     <br/>
 
     <h1>Messages for <?php echo h($agent['codename']); ?></h1>
-    
+
     <?php if($current_user['id'] == $agent['id']) { ?>
       <p>Your messages are automatically decrypted using your private key.</p>
     <?php } ?>
-    
+
     <table>
       <tr>
         <th>Date</th>
@@ -41,15 +40,57 @@
         <th>Message</th>
         <th>Signature</th>
       </tr>
-      
+
       <?php while($message = db_fetch_assoc($message_result)) { ?>
         <?php
           $created_at = strtotime($message['created_at']);
-          
+
+
+          $agent_result = find_agent_by_id($message['recipient_id']);
+          $agent = db_fetch_assoc($agent_result);
+
+          $sender_result = find_agent_by_id($message['sender_id']);
+          $sender = db_fetch_assoc($sender_result);
+
+          if($agent['id'] == 1){
+            $message_text = pkey_decrypt($message['cipher_text'], $agent['private_key']);
+          }
+          else
+            $message_text = $message['cipher_text'];
+
+
+          // if (verify_signature($message['cipher_text'], $message['signature'], $sender['public_key'])){
+          //   $validity_text = "Valid";
+          // }
+          // else{
+          //   $validity_text = "Invalid";
+          // }
+          //echo $message['cipher_text'];
+          if($agent['id'] == 1){
+            //echo $message['signature'];
+
+            $validity_text = verify_signature($message['cipher_text'], $message['signature'], $sender['public_key']);
+            if($validity_text == 1){
+              $validity_text = "Valid";
+            }
+            else{
+              $validity_text = "Invalid";
+            }
+          }
+          else{
+            $validity_text = verify_signature($message['cipher_text'], $message['signature'], $sender['public_key']);
+            if($validity_text == 1){
+              $validity_text = "Valid";
+            }
+            else{
+              $validity_text = "Invalid";
+            }
+          }
+
           // Oooops.
           // My finger accidentally hit the delete-key.
           // Sorry, APEX!!!
-          
+
         ?>
         <tr>
           <td><?php echo h(strftime('%b %d, %Y at %H:%M', $created_at)); ?></td>
@@ -60,6 +101,6 @@
         </tr>
       <?php } ?>
     </table>
-    
+
   </body>
 </html>
