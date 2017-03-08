@@ -1,6 +1,6 @@
 # Project 5 - Encryption
 
-Time spent: **X** hours spent in total
+Time spent: **5** hours spent in total
 
 ## User Stories
 
@@ -57,7 +57,7 @@ The following **required** functionality is completed:
 
 8\. Identify the Double Agent
   * [x]  Required: Decrypt as many email messages as possible
-  * [x]  Required: Identify the double agent: sydneybristow
+  * [x]  Required: Identify the double agent: Natasha
 
 The following objectives are **optional**:
 
